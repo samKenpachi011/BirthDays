@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Test</title>
+</head>
+<body>
+  <h1>Home</h1>
+
+  <!-- <input type="text" placeholder="Name" [(ngModel)]="name">
+
+  <div>
+    <label for="name">Name:</label>
+    <p id="name">{{name}}</p>
+  </div>
+
+  <div>
+    <ul><li *ngFor="let item of birthdays">
+
+      Name:{{item.name}} | {{item.date}}
+    </li></ul>
+  </div> -->
+
+<div>
+  <form [formGroup]="nameForm" (ngSubmit)="onSubmit()">
+
+    <input type="text" placeholder="Name" formControlName="name">
+    <input type="date" placeholder="Date" formControlName="date">
+    <button type="submit" [disabled]="nameForm.invalid">Add</button>
+
+  </form>
+</div>
+<div>
+  <ul><li *ngFor="let item of birthdays">
+
+    Name:{{item.name}} | {{item.date | date:'short'}}
+  </li></ul>
+</div>
+
+<div>
+  {{placeholder_txt | json }}
+</div>
+</body>
+</html>
